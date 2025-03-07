@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyYTLoader", "MyYTLoader\MyYTLoader.csproj", "{5715B1E9-660D-4FD9-AD95-46CA1D4CF2D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyYTLoader.Domain", "MyYTLoader.Domain\MyYTLoader.Domain.csproj", "{426D8AC5-96AE-4B25-A7D0-6D280F44AE3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyYTLoader.Web", "MyYTLoader.Web\MyYTLoader.Web.csproj", "{EAF2F076-1A65-4656-A9F4-ED3C0694E071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyYTLoader.DAL", "MyYTLoader.DAL\MyYTLoader.DAL.csproj", "{EEB161D1-983A-4853-8C59-3A75CFAFA899}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5715B1E9-660D-4FD9-AD95-46CA1D4CF2D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5715B1E9-660D-4FD9-AD95-46CA1D4CF2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5715B1E9-660D-4FD9-AD95-46CA1D4CF2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5715B1E9-660D-4FD9-AD95-46CA1D4CF2D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426D8AC5-96AE-4B25-A7D0-6D280F44AE3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426D8AC5-96AE-4B25-A7D0-6D280F44AE3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426D8AC5-96AE-4B25-A7D0-6D280F44AE3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426D8AC5-96AE-4B25-A7D0-6D280F44AE3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF2F076-1A65-4656-A9F4-ED3C0694E071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF2F076-1A65-4656-A9F4-ED3C0694E071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF2F076-1A65-4656-A9F4-ED3C0694E071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF2F076-1A65-4656-A9F4-ED3C0694E071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB161D1-983A-4853-8C59-3A75CFAFA899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB161D1-983A-4853-8C59-3A75CFAFA899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB161D1-983A-4853-8C59-3A75CFAFA899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB161D1-983A-4853-8C59-3A75CFAFA899}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

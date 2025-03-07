@@ -1,0 +1,23 @@
+﻿@using MyYTLoader.DAL.Entities
+@model VideoEntity
+@{
+    ViewData["Title"] = "Страница запроса";
+}
+
+
+<h2>Ссылка на видео в YouTube</h2>
+
+<form method="post" asp-action="HandlePost" asp-controller="Download">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" />
+    </div>
+    <button type="submit">Скачать</button>
+</form>
+
+@if (@Model is not null)
+{
+    <ul>
+        <li>@Model.Url</li>
+    </ul>
+}
