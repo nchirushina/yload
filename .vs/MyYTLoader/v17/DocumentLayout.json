@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\_MyYTLoader\\yload\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EAF2F076-1A65-4656-A9F4-ED3C0694E071}|MyYTLoader.Web\\MyYTLoader.Web.csproj|c:\\_myytloader\\yload\\myytloader.web\\hostedservices\\myhostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAF2F076-1A65-4656-A9F4-ED3C0694E071}|MyYTLoader.Web\\MyYTLoader.Web.csproj|solutionrelative:myytloader.web\\hostedservices\\myhostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyHostedService.cs",
+              "DocumentMoniker": "C:\\_MyYTLoader\\yload\\MyYTLoader.Web\\HostedServices\\MyHostedService.cs",
+              "RelativeDocumentMoniker": "MyYTLoader.Web\\HostedServices\\MyHostedService.cs",
+              "ToolTip": "C:\\_MyYTLoader\\yload\\MyYTLoader.Web\\HostedServices\\MyHostedService.cs",
+              "RelativeToolTip": "MyYTLoader.Web\\HostedServices\\MyHostedService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T19:06:04.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
