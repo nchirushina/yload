@@ -1,0 +1,6 @@
+# Add intial migration 
+cd C:\_MyYTLoader\yload\MyYTLoader.Dal.Migrations\
+dotnet ef migrations add InitialCreate
+
+# Build migration script
+dotnet ef migrations script --idempotent --project MyYTLoader.Dal.Migrations --startup-project MyYTLoader.Dal.Migrations --output Databases/LoaderDb.sql 

@@ -15,7 +15,7 @@ namespace MyYTLoader.DAL
         public LoaderContext(DbContextOptions<LoaderContext> options)
         : base(options)
         {
-            Database.EnsureCreated();
+           // Database.EnsureCreated();
         }
 /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -24,10 +24,10 @@ namespace MyYTLoader.Domain
             process.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
             process.ErrorDataReceived += new DataReceivedEventHandler(OutputHandler);
             //* Start process and handlers
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
-            process.WaitForExit();
+            //process.Start();
+            //process.BeginOutputReadLine();
+            //process.BeginErrorReadLine();
+            //process.WaitForExit();
         }
 
         public void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
