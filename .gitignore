@@ -7,7 +7,7 @@
 *.sln.docstates
 
 # Build results
-
+.vs/
 [Dd]ebug/
 [Rr]elease/
 x64/
@@ -131,3 +131,6 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+/.vs/MyYTLoader/v17/DocumentLayout.json
+/.vs/MyYTLoader/DesignTimeBuild/.dtbcache.v2
+/.vs/MyYTLoader/v17/DocumentLayout.json
