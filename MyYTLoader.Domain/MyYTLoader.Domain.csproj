@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyYTLoader.DAL\MyYTLoader.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

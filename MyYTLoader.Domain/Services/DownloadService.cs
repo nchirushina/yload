@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyYTLoader.Domain.Configs;
 
-namespace MyYTLoader.Domain
+namespace MyYTLoader.Domain.Services
 {
     public class DownloadService : IDownloadService
     {

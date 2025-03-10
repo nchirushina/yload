@@ -20,5 +20,16 @@ namespace MyYTLoader.DAL.Repositories
         {
             return _db.Videos.SingleOrDefault(v => v.Id == id);
         }
+
+        public Guid Add(VideoEntity videoEntity)
+        {
+            _db.Videos.Add(videoEntity);
+            return videoEntity.Id;
+        }
+
+        public bool Any(string url)
+        {
+            return _db.Videos.Any(v => v.Url == url);
+        }
     }
 }
