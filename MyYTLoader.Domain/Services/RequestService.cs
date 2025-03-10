@@ -16,7 +16,7 @@ namespace MyYTLoader.Domain.Services
         {
             if (_videoRepository.Any(uri))
             {
-                return Guid.Empty;
+                return _videoRepository.GetByUrl(uri);
             }
 
             var videoEntity = new VideoEntity()

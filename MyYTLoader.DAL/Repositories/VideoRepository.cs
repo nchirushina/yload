@@ -31,5 +31,10 @@ namespace MyYTLoader.DAL.Repositories
         {
             return _db.Videos.Any(v => v.Url == url);
         }
+
+        public Guid GetByUrl(string uri)
+        {
+            return _db.Videos.FirstOrDefault(v => v.Url == uri).Id;
+        }
     }
 }

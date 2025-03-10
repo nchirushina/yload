@@ -35,13 +35,17 @@ namespace MyYTLoader.Domain.Tests
                     ve => ve.Url == uri)))
                 .Returns(videoId);
 
+            videoRepositoryMock
+                .Setup(vrm => vrm.GetByUrl(It.Is<string>(s => s == uri)))
+                .Returns(videoId);
+
             var systemUnderTest = new RequestService(videoRepositoryMock.Object);
 
             // Act
             var result = systemUnderTest.AddVideo(uri);
 
             // Assert
-            result.Should().Be(Guid.Empty);
+            result.Should().Be(videoId);
 
         }
 
@@ -49,21 +53,30 @@ namespace MyYTLoader.Domain.Tests
         public void Should_Create_New_VideoEntity_If_Url_Is_Nor_Exists()
         {
             // Arrange
-            var videoRepositoryMock = new Mock<IVideoRepository>();// (MockBehavior.Strict);
+            var videoRepositoryMock = new Mock<IVideoRepository>(MockBehavior.Strict);
+
             var uri = "MockUri";
             var resultGuid = Guid.NewGuid();
             var videoEntity = new VideoEntity()
             {
+                Url = uri,
                 Created = DateTime.UtcNow,
                 State = VideoState.New,
-                Url = uri,
             };
 
             videoRepositoryMock
-                            .Setup(vrm => vrm.Add(It.Is<VideoEntity>(ve => ve.Url == videoEntity.Url)))
-                            .Returns(resultGuid);
-            
-            var systemUnderTest = new RequestService (videoRepositoryMock.Object);
+                .Setup(vrm => vrm.Add(It.Is<VideoEntity>(ve => ve.Url == videoEntity.Url)))
+                .Returns(resultGuid);
+
+            videoRepositoryMock
+                .Setup(vrm => vrm.Any(It.Is<string>(s => s == uri)))
+                .Returns(true);
+
+            videoRepositoryMock
+                .Setup(vrm => vrm.GetByUrl(It.Is<string>(s => s == uri)))
+                .Returns(resultGuid);
+
+            var systemUnderTest = new RequestService(videoRepositoryMock.Object);
 
             // Act
             var result = systemUnderTest.AddVideo(uri);
