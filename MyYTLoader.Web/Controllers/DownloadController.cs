@@ -2,6 +2,7 @@
 using MyYTLoader.DAL.Entities;
 using MyYTLoader.DAL.Repositories;
 using MyYTLoader.Domain;
+using MyYTLoader.Domain.Services;
 
 namespace MyYTLoader.Web.Controllers
 {
@@ -9,12 +10,16 @@ namespace MyYTLoader.Web.Controllers
     {
         private readonly ILogsProvider _logsProvider;
         private readonly IDownloadService _downloadService;
-        private readonly IVideoRepository _videoRepository;
-        public DownloadController(ILogsProvider logsProvider, IDownloadService downloadService, IVideoRepository videoRepository)
+        private readonly IRequestService requestService;
+
+        public DownloadController(ILogsProvider logsProvider, 
+            IDownloadService downloadService, 
+            IVideoRepository videoRepository, 
+            IRequestService requestService)
         {
             this._logsProvider = logsProvider;
             this._downloadService = downloadService;
-            _videoRepository = videoRepository;
+            this.requestService = requestService;
         }
 
         // GET метод для отображения страницы
@@ -22,7 +27,8 @@ namespace MyYTLoader.Web.Controllers
         {
             ViewData["Message"] = video;
             ViewBag.Test = video;
-            return View();
+            
+            return View("Request", requestService.GetAll());
         }
         
         // POST метод для обработки данных из формы
@@ -30,7 +36,8 @@ namespace MyYTLoader.Web.Controllers
         public IActionResult HandlePost(string name)
         {
             _logsProvider.AddLog(name);
-            _downloadService.Download(name);
+            //_downloadService.Download(name);
+            var videoGuid = requestService.AddVideo(name);
             // Логика обработки данных из формы
             // Например, сохраняем данные или выполняем валидацию
 
@@ -43,8 +50,7 @@ namespace MyYTLoader.Web.Controllers
 
             // Если все в порядке, можно отправить подтверждение или redirect
 
-            var video = _videoRepository.GetAll().FirstOrDefault();
-            return View("Request", video);
+            return View("Request", requestService.GetAll());
         }
     }
 }

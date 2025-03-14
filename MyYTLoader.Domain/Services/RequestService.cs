@@ -3,7 +3,7 @@ using MyYTLoader.DAL.Repositories;
 
 namespace MyYTLoader.Domain.Services
 {
-    public class RequestService
+    public class RequestService : IRequestService
     {
         private readonly IVideoRepository _videoRepository;
 
@@ -28,6 +28,11 @@ namespace MyYTLoader.Domain.Services
 
             var id = _videoRepository.Add(videoEntity);
             return id;
+        }
+
+        public List<VideoEntity> GetAll()
+        {
+            return _videoRepository.GetAll().ToList();   
         }
     }
 }

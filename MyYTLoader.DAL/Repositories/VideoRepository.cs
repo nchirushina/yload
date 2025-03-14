@@ -11,9 +11,9 @@ namespace MyYTLoader.DAL.Repositories
             _db = db;
         }
 
-        public IQueryable<VideoEntity> GetAll()
+        public List<VideoEntity> GetAll()
         {
-            return _db.Videos;
+            return _db.Videos.ToList();
         }
 
         public VideoEntity? GetById(Guid id)
@@ -21,9 +21,29 @@ namespace MyYTLoader.DAL.Repositories
             return _db.Videos.SingleOrDefault(v => v.Id == id);
         }
 
+        public List<VideoEntity> GetAllNew()
+        {
+            return _db.Videos.Where(v => v.State == VideoState.New).ToList();
+        }
+
+        public bool SetState(Guid guid, VideoState videoState)
+        {
+            var video = this.GetById(guid);
+            if (video == null)
+            {
+                return false;
+            }
+
+            video.State = videoState;
+            _db.Videos.Update(video);
+            _db.SaveChanges();
+            return true;
+        }
+
         public Guid Add(VideoEntity videoEntity)
         {
             _db.Videos.Add(videoEntity);
+            _db.SaveChanges();
             return videoEntity.Id;
         }
 

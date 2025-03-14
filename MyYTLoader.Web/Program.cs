@@ -18,7 +18,8 @@ namespace MyYTLoader.Web
             builder.Services.AddSingleton<ILogsProvider, LogsProvider>();
             builder.Services.AddScoped<IDownloadService, DownloadService>();
             builder.Services.AddScoped<IYtDlpWrapper, YtDlpWrapper>();
-            builder.Services.AddHostedService<MyHostedService>();
+            builder.Services.AddScoped<IRequestService, RequestService>();
+            builder.Services.AddHostedService<RequestDownloaderWorker>();
             builder.Services.Configure<YtDlpWrapperConfig>(builder.Configuration.GetSection(nameof(YtDlpWrapperConfig)));
             builder.Services.RegisterDALservices(builder.Configuration);
 
